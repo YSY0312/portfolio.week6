@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Shuyang.Yin</title>
+  <meta name="description" content="A few things Shuyang.Yin has built — shipped products, side projects, and experiments." />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
+      } catch (e) {}
+    })();
+  </script>
+  <script type="module" crossorigin src="./assets/connectionTest-CYRMilkm.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/connectionTest-6RQLTFGj.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">S</span>
+        <span>Shuyang.Yin</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main class="main">
+    <div class="container page">
+      <span class="eyebrow">Selected work</span>
+      <h1 class="page-title">Things I've finished and liked</h1>
+      <p class="page-lead">
+        A small selection of digital education projects and educational interventions. Each project helps me explore how digital tools and AI can support learners.
+      </p>
+
+      <section class="panel todo-app" id="todo-app" aria-labelledby="todo-title">
+        <div class="todo-head">
+          <span class="eyebrow">Interactive mini-app</span>
+          <h2 id="todo-title">Task planner</h2>
+          <p>Pick a date on the calendar, jot down what needs doing, and press <strong>Add</strong>. Check things off when they're done — tasks are saved to the cloud.</p>
+          <p class="todo-sync" id="todo-sync" role="status" data-state="loading">Connecting…</p>
+        </div>
+        <div class="todo-layout">
+          <div class="todo-calendar">
+            <div class="cal-header">
+              <button type="button" class="cal-nav" id="cal-prev" aria-label="Previous month">&#8249;</button>
+              <span class="cal-title" id="cal-title"></span>
+              <button type="button" class="cal-nav" id="cal-next" aria-label="Next month">&#8250;</button>
+            </div>
+            <div class="cal-weekdays" aria-hidden="true"></div>
+            <div class="cal-grid" id="cal-grid" role="grid" aria-label="Choose a date"></div>
+          </div>
+          <div class="todo-side">
+            <form class="todo-form" id="todo-form">
+              <input type="text" id="todo-input" placeholder="What needs to be done?" maxlength="140" autocomplete="off" aria-label="Task description" />
+              <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+            <div class="todo-pickers" id="todo-pickers">
+              <div class="picker-group" role="group" aria-label="Choose an emoji for the task">
+                <span class="picker-label">Tag</span>
+                <div class="emoji-row" id="emoji-row">
+                  <button type="button" class="emoji-btn is-active" data-emoji="📝" aria-label="Note">📝</button>
+                  <button type="button" class="emoji-btn" data-emoji="📖" aria-label="Reading">📖</button>
+                  <button type="button" class="emoji-btn" data-emoji="💡" aria-label="Idea">💡</button>
+                  <button type="button" class="emoji-btn" data-emoji="🎯" aria-label="Goal">🎯</button>
+                  <button type="button" class="emoji-btn" data-emoji="🔔" aria-label="Reminder">🔔</button>
+                  <button type="button" class="emoji-btn" data-emoji="🏃" aria-label="Urgent">🏃</button>
+                  <button type="button" class="emoji-btn" data-emoji="⭐" aria-label="Important">⭐</button>
+                </div>
+              </div>
+              <div class="picker-group" role="group" aria-label="Choose a priority level">
+                <span class="picker-label">Priority</span>
+                <div class="pri-row" id="pri-row">
+                  <button type="button" class="pri-btn pri-low" data-priority="low">Low</button>
+                  <button type="button" class="pri-btn pri-med is-active" data-priority="medium">Medium</button>
+                  <button type="button" class="pri-btn pri-high" data-priority="high">High</button>
+                </div>
+              </div>
+            </div>
+            <p class="todo-selected">Adding for <strong id="todo-selected-date"></strong></p>
+            <p class="todo-progress" id="todo-progress" aria-live="polite">0 of 0 tasks completed</p>
+            <ul class="todo-list" id="todo-list" aria-label="Tasks"></ul>
+            <p class="todo-empty" id="todo-empty">No tasks yet &#8212; pick a date and add your first one.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-cover cover-1"><span class="glyph" aria-hidden="true">🎯</span></div>
+          <div class="project-body">
+            <h3>Attention &amp; Focus Learning Intervention</h3>
+            <p>Designed a set of educational materials to help university students improve their concentration for academic reading. This project explores digital learning strategies to reduce distraction and enhance learning efficiency.</p>
+            <div class="project-tags">
+              <span class="tag">Digital Education</span><span class="tag">AI in Learning</span><span class="tag">Focus</span>
+            </div>
+            <a class="project-link" href="#">View case study →</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="section" style="text-align:center;">
+        <p style="color:var(--text-soft); margin-bottom:18px;">Want the full list, or a peek at the work-in-progress shelf?</p>
+        <a class="btn btn-ghost" href="contact.html">Just ask me →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="fun-fact">
+        <span class="label">Fun fact about me</span>
+        <p>I used to learn Sanda, and I love exploring how sports and educational theories connect with each other.</p>
+      </div>
+      <p class="footer-bottom">© <span id="year"></span> Shuyang.Yin · <a href="contact.html">Get in touch</a></p>
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

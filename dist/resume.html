@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Résumé — Shuyang.Yin</title>
+  <meta name="description" content="Shuyang.Yin's résumé — experience, education, skills, and a few stats." />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
+      } catch (e) {}
+    })();
+  </script>
+  <script type="module" crossorigin src="./assets/connectionTest-CYRMilkm.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/connectionTest-6RQLTFGj.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">S</span>
+        <span>Shuyang.Yin</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main class="main">
+    <div class="container page">
+      <span class="eyebrow">Résumé</span>
+      <h1 class="page-title">A short story of where I've been</h1>
+      <p class="page-lead">
+        Education researcher with a background in sports education. I explore how technology can support inclusive and engaging learning experiences. Below is the honest version — wins, lessons, and the things I'm proudest of.
+      </p>
+      <a class="btn btn-primary" href="resume.pdf" download>Download PDF ↓</a>
+
+      <div class="grid-2">
+        <section aria-labelledby="exp-title">
+          <h2 id="exp-title" style="margin-bottom:24px;">Experience</h2>
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-period">2021 — 2025</div>
+              <h3>Wushu and Traditional National Sports</h3>
+              <div class="org">Luoyang Normal University</div>
+              <p>Studied exercise physiology, sports anatomy, national physical education and pedagogy. Built foundational knowledge in motor learning, sport pedagogy and physical assessment. Practised instructional design for physical education and developed strong skills in communication, coaching and reflective practice.</p>
+            </div>
+            <div class="tl-item">
+              <div class="tl-period">2026 — NOW</div>
+              <h3>Master of Digital Education</h3>
+              <div class="org">XJTLU</div>
+              <p>Studied key modules: introductory qualitative research methods, 21st-century STEAM integration, and digital education curriculum design. Developed competence to embed artificial intelligence into classroom instruction, analyse educational technology practices and design technology-enhanced learning activities.</p>
+            </div>
+          </div>
+        </section>
+
+        <aside style="display:grid; gap:24px; align-content:start;">
+          <div class="panel">
+            <h2>Skills</h2>
+            <div class="chips">
+              <span class="chip">IELTS</span>
+              <span class="chip">Mandarin Level 2 Grade A</span>
+              <span class="chip">Teacher Qualification Certificate</span>
+              <span class="chip">Youth Physical Fitness Training</span>
+              <span class="chip">Physical Education Teaching</span>
+              <span class="chip">National Level 2 Athlete (Wushu)</span>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h2>What I care about</h2>
+            <ul class="list">
+              <li>Team cohesion</li>
+              <li>Positive working atmosphere</li>
+              <li>Building shared goals</li>
+              <li>Development of teaching skills</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="fun-fact">
+        <span class="label">Fun fact about me</span>
+        <p>I’m a person with a sense of humour — even though my friends never laugh at my dad jokes.</p>
+      </div>
+      <p class="footer-bottom">© <span id="year"></span> Shuyang.Yin · <a href="contact.html">Get in touch</a></p>
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
